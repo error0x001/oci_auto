@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "ssh_authorized_keys": "ssh-rsa xxx"
+  },
+  "shape": "VM.Standard.A1.Flex",
+  "compartmentId": "ocid1.xxx",
+  "displayName": "instance-xxx",
+  "availabilityDomain": "FIiW:xxx",
+  "sourceDetails": {
+    "sourceType": "image",
+    "imageId": "ocid1.xxx"
+  },
+  "createVnicDetails": {
+    "assignPublicIp": true,
+    "subnetId": "ocid1.xxx",
+    "assignPrivateDnsRecord": true
+  },
+  "agentConfig": {
+    "pluginsConfig": [
+      {
+        "name": "Vulnerability Scanning",
+        "desiredState": "DISABLED"
+      },
+      {
+        "name": "Compute Instance Monitoring",
+        "desiredState": "ENABLED"
+      },
+      {
+        "name": "Bastion",
+        "desiredState": "DISABLED"
+      }
+    ],
+    "isMonitoringDisabled": false,
+    "isManagementDisabled": false
+  },
+  "definedTags": {},
+  "freeformTags": {},
+  "instanceOptions": {
+    "areLegacyImdsEndpointsDisabled": false
+  },
+  "availabilityConfig": {
+    "recoveryAction": "RESTORE_INSTANCE"
+  },
+  "shapeConfig": {
+    "ocpus": 4,
+    "memoryInGBs": 24
+  }
+}
