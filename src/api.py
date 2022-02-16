@@ -1,20 +1,25 @@
+from typing import Tuple
+
 from oci.exceptions import ServiceError
 
 from logger import logger
 from oci_client import oci_client
 
 
-def is_succeed_preparation() -> str:
+def is_succeed_preparation() -> Tuple[bool, str]:
     try:
         oci_client.prepare_client()
-        oci_client.has_available_instance()
+        if not oci_client.has_available_instance():
+            msg = "check your config and your existing instances"
+            logger.error(msg)
+            return False, msg
         msg = "client is prepared"
         logger.info(msg)
-        return msg
+        return True, msg
     except Exception as exc:
         msg = f"failed to prepare client, error {exc}"
         logger.error(msg)
-        raise exc
+        return False, msg
 
 
 def is_instance_launched() -> bool:
