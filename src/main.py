@@ -15,7 +15,7 @@ def run():
             time.sleep(config.wait_interval)
             continue
         break
-    notificator.send("success! go to control panel and check it!")
+    notificator.send("success! go to the control panel and check it!")
     notificator.close()
 
 
