@@ -1,0 +1,9 @@
+version: "3"
+services:
+  oci_auto:
+    container_name: oci_auto
+    build: .
+    env_file:
+      - .env.example
+    volumes:
+      - ./config/:/config/
