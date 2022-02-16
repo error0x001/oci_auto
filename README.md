@@ -8,9 +8,10 @@ Inspired by chacuavip10 and the [article](https://www.hintdesk.com/2022/01/15/ho
 2. Register an API key*
 3. Start to create an instance in the control panel*
 4. Catch the request*
-5. Fill two files with your request data:
+5. Put your key to `config`
+6. Fill two files with your request data:
    1. config/config
    2. .env.example
-6. Run `docker-compose up`
+7. Run `docker-compose up`
 
 `* you can get more information from the article`
