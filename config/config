@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.xxx
+fingerprint=01:xxx
+tenancy=ocid1.xxx
+region=eu-xxx
+key_file=/config/xxx.pem
