@@ -17,8 +17,8 @@ class Telegram:
         self.__session.close()
 
     def send(self, message: str) -> None:
-        logger.info(f"{self.__DISABLED_TELEGRAM} {message}")
         if not self.__is_active:
+            logger.info(f"{self.__DISABLED_TELEGRAM} {message}")
             return
         try:
             self.__session.get(
