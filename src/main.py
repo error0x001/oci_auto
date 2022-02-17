@@ -5,7 +5,7 @@ from api import is_instance_launched, is_succeed_preparation
 
 
 def run():
-    notificator = Telegram(bot_api=config.bot_api, chat_id=config.chat_id)
+    notificator = Telegram(bot_id=config.bot_id, chat_id=config.chat_id)
     ok, msg = is_succeed_preparation()
     notificator.send(msg)
     if not ok:

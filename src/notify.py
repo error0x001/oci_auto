@@ -7,10 +7,10 @@ class Telegram:
     __FAILED_MESSAGE = "Message fail to sent via telegram"
     __DISABLED_TELEGRAM = "[TELEGRAM BOT IS DISABLED]"
 
-    def __init__(self, bot_api: str, chat_id: str) -> None:
+    def __init__(self, bot_id: str, chat_id: str) -> None:
         self.__session = Session()
-        self.__is_active = bool(bot_api and chat_id)
-        self.bot_api = bot_api
+        self.__is_active = bool(bot_id and chat_id)
+        self.bot_id = bot_id
         self.chat_id = chat_id
 
     def close(self) -> None:
@@ -22,7 +22,7 @@ class Telegram:
             return
         try:
             self.__session.get(
-                f"https://api.telegram.org/bot{self.bot_api}/sendMessage?chat_id={self.chat_id}&text={message}"
+                f"https://api.telegram.org/bot{self.bot_id}/sendMessage?chat_id={self.chat_id}&text={message}"
             )
         except RequestException:
             logger.error(self.__FAILED_MESSAGE)
