@@ -15,7 +15,7 @@ class Config:
     ssh_key: str
     path_to_config_file: str
 
-    bot_api: str
+    bot_id: str
     chat_id: str
 
 
@@ -30,6 +30,6 @@ config = Config(
     subnet_id=os.getenv("SUBNET_ID"),
     ssh_key=os.getenv("SSH_KEY"),
     path_to_config_file=os.getenv("PATH_TO_CONFIG_FILE"),
-    bot_api=os.getenv("BOT_API"),
+    bot_id=os.getenv("BOT_ID"),
     chat_id=os.getenv("CHAT_ID"),
 )
